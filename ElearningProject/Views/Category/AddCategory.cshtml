@@ -1,0 +1,23 @@
+﻿@model ElearningProject.DAL.Entities.Category
+@{
+    ViewBag.Title = "AddCategory";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-block">
+                <h2 style="color:seagreen">~Kategori Ekleme Paneli~</h2>
+                <form method="post">
+                    <label>Kategori Ad</label>
+                    @Html.TextBoxFor(x => x.CategoryName, new { @class = "form-control" })
+                    <br />
+                    <br />
+                    <button class="btn btn-success">KATEGORİ EKLE</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

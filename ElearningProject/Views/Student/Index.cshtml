@@ -1,0 +1,52 @@
+﻿@model List<ElearningProject.DAL.Entities.Student>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-block">
+                <h2 style="color:seagreen">~Öğrenciler~</h2>
+                <br />
+                <br />
+                <table class="table table-bordered">
+                    <tr>
+                        <th>#</th>
+                        <th>Ad Soyad</th>
+                        <th>Sil</th>
+                        <th>Güncelle</th>
+                        <th>Kurslar</th>
+                    </tr>
+                    @if (ViewBag.UyariMesaji != null)
+                    {
+                        <div class="alert alert-danger">
+                            <strong>@ViewBag.UyariMesaji</strong>
+                        </div>
+                    }
+                    else
+                    {
+                        foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.StudentId</td>
+                                <td>@item.Name @item.Surname</td>
+                                <td>
+                                    <a href="/Student/DeleteStudent/@item.StudentId" class="btn btn-danger" style="width:50%">SİL</a>
+                                </td>
+                                <td>
+                                    <a href="/Student/UpdateStudent/@item.StudentId" class="btn btn-warning" style="width:50%">GÜNCELLE</a>
+                                </td>
+
+                            </tr>
+                        }
+                    }
+                </table>
+                <a href="/Student/AddStudent/" class="btn btn-primary" style="width:15%">YENİ ÖĞRENCİ GİRİŞİ</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+

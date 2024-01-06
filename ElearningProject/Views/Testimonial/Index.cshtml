@@ -1,0 +1,53 @@
+﻿@model List<ElearningProject.DAL.Entities.Testimonial>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-block">
+                <h2 style="color:seagreen">~REFERANSLAR~</h2>
+                <br />
+                <br />
+                <table class="table table-bordered">
+                    <tr>
+                        <th>#</th>
+                        <th>Referans Adı Soyadı</th>
+                        <th>Ünvanı</th>
+                        <th>Resmi</th>
+                        <th>Yorumu</th>
+                        <th>Sil</th>
+                        <th>Güncelle</th>
+                        <th>Durumu</th>
+
+                    </tr>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.TestimonialId</td>
+                            <td>@item.NameSurname</td>
+                            <td>@item.Title</td>
+                            <td>@item.ImageUrl</td>
+                            <td>@item.Comment</td>
+
+                            <td>
+                                <a href="/Testimonial/DeleteTestimonial/@item.TestimonialId" class="btn btn-danger">Sil</a>
+
+                            </td>
+                            <td>
+                                <a href="/Testimonial/UpdateTestimonial/@item.TestimonialId" class="btn btn-warning">Güncelle</a>
+
+                            </td>
+                            <td>@item.Status</td>
+
+                        </tr>
+                    }
+
+                </table>
+                <a href="/Testimonial/AddTestimonial/" class="btn btn-primary" style="width:15%">YENİ REFERANS GİRİŞİ</a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+@Html.Action("PartialAbout", "About")
+<body>
+    <!-- Spinner Start -->
+    @Html.Action("PartialSpinner", "About")
+    <!-- Spinner End -->
+    <!-- Navbar Start -->
+    @Html.Action("PartialNavbar", "About")
+    <!-- Navbar End -->
+    <!-- Header Start -->
+    @Html.Action("PartialHeader", "About")
+    <!-- Header End -->
+    <!-- Service Start -->
+    @Html.Action("PartialService", "About")
+    <!-- Service End -->
+    <!-- About Start -->
+    @Html.Action("PartialAboutus", "About")
+    <!-- About End -->
+    <!-- Team Start -->
+    @Html.Action("PartialInstructors", "About")
+    <!-- Team End -->
+    <!-- Footer Start -->
+    @Html.Action("PartialFooter", "Default")
+    <!-- Footer End -->
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    @Html.Action("PartialScript", "About")
+</body>
+
+</html>

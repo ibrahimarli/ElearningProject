@@ -1,0 +1,51 @@
+﻿@model List<ElearningProject.DAL.Entities.Instructor>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-block">
+                <h2 style="color:seagreen">~Eğitmenler~</h2>
+                <br />
+                <br />
+                <table class="table table-bordered">
+                    <tr>
+                        <th>#</th>
+                        <th>Görsel</th>
+                        <th>Eğitmen Ad Soyad</th>
+                        <th>Sil</th>
+                        <th>Güncelle</th>
+                        <th>Kurslar</th>
+                        <th>Sitede Gör</th>
+                    </tr>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.InstructorID</td>
+                            <td><img src="@item.ImageUrl" style="height:100px; width:100px; border-radius:50%" /></td>
+                            <td>@item.Name  @item.Surname</td>
+                            <td>
+                                <a href="/Instructor/DeleteInstructor/@item.InstructorID" class="btn btn-danger" style="width:50%">SİL</a>
+                            </td>
+                            <td>
+                                <a href="/Instructor/UpdateInstructor/@item.InstructorID" class="btn btn-warning" style="width:50%">GÜNCELLE</a>
+                            </td>
+                            <td>
+                                <a href="/Instructor/#/@item.InstructorID" class="btn btn-info" style="width:50%">KURSLAR</a>
+                            </td>  
+                            <td>
+                                <a href="/Instructor/#/@item.InstructorID" class="btn btn-secondary" style="width:50%">SİTEDE GÖR</a>
+                            </td>
+
+                        </tr>
+                    }
+                </table>
+                <a href="/Instructor/AddInstructors/" class="btn btn-primary" style="width:15%">YENİ EĞİTMEN GİRİŞİ</a>
+            </div>
+        </div>
+    </div>
+</div>
+

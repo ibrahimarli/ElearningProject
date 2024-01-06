@@ -1,0 +1,43 @@
+﻿@model List<ElearningProject.DAL.Entities.Category>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-block">
+                <h2 style="color:seagreen">~Kategoriler~</h2>
+                <br />
+                <br />
+                <table class="table table-bordered">
+                    <tr>
+                        <th>#</th>
+                        <th>Kategori Ad</th>
+                        <th>Sil</th>
+                        <th>Güncelle</th>
+                    </tr>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.CategoryID</td>
+                            <td>@item.CategoryName</td>
+                            <td>
+                                <a href="/Category/DeleteCategory/@item.CategoryID" class="btn btn-danger" style="width:50%">SİL</a>
+                            </td>
+                            <td>
+                                <a href="/Category/UpdateCategory/@item.CategoryID" class="btn btn-warning" style="width:50%">GÜNCELLE</a>
+                            </td>
+
+                        </tr>
+                    }
+                </table>
+                <a href="/Category/AddCategory/" class="btn btn-primary" style="width:15%">YENİ KATEGORİ GİRİŞİ</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

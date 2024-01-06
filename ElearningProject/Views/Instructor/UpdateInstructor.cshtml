@@ -1,0 +1,34 @@
+﻿@model ElearningProject.DAL.Entities.Instructor
+@{
+    ViewBag.Title = "UpdateInstructor";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-block">
+                <h2 style="color:seagreen">~Eğitmen Güncelleme Paneli~</h2>
+                <form method="post">
+                    <label>Eğitmen ID</label>
+                    @Html.HiddenFor(X => X.InstructorID, new { @class = "form-control" })
+                    <label>Eğitmen Ad</label>
+                    @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+                    <br />
+                    <br />
+                    <label>Eğitmen Soyad</label>
+                    @Html.TextAreaFor(x => x.Surname, new { @class = "form-control" })
+                    <br />
+                    <br />
+                    <label>Eğitmen Görsel</label>
+                    @Html.TextAreaFor(x => x.ImageUrl, new { @class = "form-control" })
+                    <br />
+                    <br />
+                    <button class="btn btn-success">EĞİTMEN GÜNCELLE</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
